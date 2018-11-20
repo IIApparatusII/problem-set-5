@@ -27,6 +27,19 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
+height = prompt("Please Enter an Integer Height Between 1 and 23.");
+    if (height !== 1 || height !== 2 || height !== 3 || height !== 4 || height !== 5 || height !== 6 || height !== 7 || height !== 8 || height !== 9 || height !== 10 || height !== 11 || height !== 12 || height !== 13 || height !== 14 || height !== 15 || height !== 16 || height !== 17 || height !== 18 || height !== 19 || height !== 20 || height !== 21 || height !== 22 || height !==23) {
+      while (height !== 1 || height !== 2 || height !== 3 || height !== 4 || height !== 5 || height !== 6 || height !== 7 || height !== 8 || height !== 9 || height !== 10 || height !== 11 || height !== 12 || height !== 13 || height !== 14 || height !== 15 || height !== 16 || height !== 17 || height !== 18 || height !== 19 || height !== 20 || height !== 21 || height !== 22 || height !==23) {
+        height=prompt("Please Enter an Integer Height Between 1 and 23.");
+        }
+    }
+    else {
+      //let x = 0
+      //while (x != height){
+        var div=document.getElementById("mario-easy-output");
+        div.innerHTML="##"
+      //}
+  }
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
