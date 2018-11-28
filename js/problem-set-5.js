@@ -27,25 +27,28 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
-height = prompt("Please Enter an Integer Height Between 1 and 23.");
-    if (height !== 1 || height !== 2 || height !== 3 || height !== 4 || height !== 5 || height !== 6 || height !== 7 || height !== 8 || height !== 9 || height !== 10 || height !== 11 || height !== 12 || height !== 13 || height !== 14 || height !== 15 || height !== 16 || height !== 17 || height !== 18 || height !== 19 || height !== 20 || height !== 21 || height !== 22 || height !==23) {
-      while (height !== 1 || height !== 2 || height !== 3 || height !== 4 || height !== 5 || height !== 6 || height !== 7 || height !== 8 || height !== 9 || height !== 10 || height !== 11 || height !== 12 || height !== 13 || height !== 14 || height !== 15 || height !== 16 || height !== 17 || height !== 18 || height !== 19 || height !== 20 || height !== 21 || height !== 22 || height !==23) {
-        height=prompt("Please Enter an Integer Height Between 1 and 23.");
-        }
-    }
-    else {
-      //let x = 0
-      //while (x != height){
-        var div=document.getElementById("mario-easy-output");
-        div.innerHTML="##"
-      //}
+height=prompt("Please Enter an Integer Height Between 1 and 23.");
+  while (height < 1 || height > 23 || height % 1 != 0) {
+    height=prompt("Please Enter an Integer Height Between 1 and 23.");
   }
+}
+/*  let height1 = "##";
+    if (height === 2){
+      let height2 = "###";
+    }
+    if (height === 3){
+      let height3 = 0;
+    }
+
+
+        var div=document.getElementById("mario-easy-output");
+        div.innerHTML=`##</break>${height}`;
+
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
-}
-
+}*/
 /*
  * Mario, Again. 10 points.
  *
@@ -202,10 +205,39 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
-
+  windspeed=prompt(`Please enter a nonnegative integer windspeed (mph)`);
+    while (windspeed < 0 || windspeed % 1 != 0){
+      windspeed=prompt(`Please enter a nonnegative integer windspeed (mph)`);
+    }
+    windspeed = parseInt(windspeed);
+  let mph = windspeed;
+    if (mph >= 157){
+      mph = `Category 5 Hurricane.`;
+    }
+    if (mph >= 130 && mph <= 156){
+      mph = `Category 4 Hurricane.`;
+    }
+    if (mph >= 111 && mph <= 129){
+      mph = `Category 3 Hurricane.`;
+    }
+    if (mph >= 96 && mph <= 110){
+      mph = `Category 2 Hurricane.`;
+    }
+    if (mph >= 74 && mph <= 95){
+      mph = `Category 1 Hurricane.`;
+    }
+    if (mph >= 39 && mph <= 94){
+      mph = `Tropical Storm.`;
+    }
+    if (mph <= 38){
+      mph = `The skies are calm...`;
+    }
+  var div=document.getElementById('hurricane-output');
+  div.innerHTML=(`${mph}`);
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
+
 }
 
 /*
@@ -232,7 +264,48 @@ function gymnastics() {
   let total = 0; //// DO NOT MODIFY
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
+let score1;
+score1 = prompt('Please enter a score between 0.0 and 10.0.');
+  while(score1 < 0 || score1 > 10){
+    score1 = prompt('Please enter a score between 0.0 and 10.0.');
+  }
+let score2;
+score2 = prompt('Please enter a second score between 0.0 and 10.0.');
+  while(score2 < 0 || score2 > 10){
+    score2 = prompt('Please enter a second score between 0.0 and 10.0.');
+  }
+let score3;
+score3 = prompt('Please enter a third score between 0.0 and 10.0.');
+  while(score3 < 0 || score3 > 10){
+    score3 = prompt('Please enter a third score between 0.0 and 10.0.');
+  }
+let score4;
+score4 = prompt('Please enter a fourth score between 0.0 and 10.0.');
+  while(score4 < 0 || score4 > 10){
+    score4 = prompt('Please enter a fourth score between 0.0 and 10.0.');
+  }
+let score5;
+score5 = prompt('Please enter a fifth score between 0.0 and 10.0.');
+  while(score5 < 0 || score5 > 10){
+    score5 = prompt('Please enter a fifth score between 0.0 and 10.0.');
+  }
+let score6;
+score6 = prompt('Please enter a sixth score between 0.0 and 10.0.');
+  while(score6 < 0 || score6 > 10){
+    score6 = prompt('Please enter a sixth score between 0.0 and 10.0.');
+  }
+scores.push(score1);
+scores.push(score2);
+scores.push(score3);
+scores.push(score4);
+scores.push(score5);
+scores.push(score6);
 
+let average
+average = score1 + score2 + score3 + score4 + score5 + score6 - Math.min(score1, score2, score3, score4, score5, score6) - Math.max(score1, score2, score3, score4, score5, score6);
+average = average / 4
+var div=document.getElementById('gymnastics-output');
+div.innerHTML=(`Average Score: ${average}`);
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
    *       six of the judges' scores.
