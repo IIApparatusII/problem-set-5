@@ -269,31 +269,37 @@ score1 = prompt('Please enter a score between 0.0 and 10.0.');
   while(score1 < 0 || score1 > 10){
     score1 = prompt('Please enter a score between 0.0 and 10.0.');
   }
+  score1 = parseInt(score1);
 let score2;
 score2 = prompt('Please enter a second score between 0.0 and 10.0.');
   while(score2 < 0 || score2 > 10){
     score2 = prompt('Please enter a second score between 0.0 and 10.0.');
   }
+    score2 = parseInt(score2);
 let score3;
 score3 = prompt('Please enter a third score between 0.0 and 10.0.');
   while(score3 < 0 || score3 > 10){
     score3 = prompt('Please enter a third score between 0.0 and 10.0.');
   }
+    score3 = parseInt(score3);
 let score4;
 score4 = prompt('Please enter a fourth score between 0.0 and 10.0.');
   while(score4 < 0 || score4 > 10){
     score4 = prompt('Please enter a fourth score between 0.0 and 10.0.');
   }
+    score4 = parseInt(score4);
 let score5;
 score5 = prompt('Please enter a fifth score between 0.0 and 10.0.');
   while(score5 < 0 || score5 > 10){
     score5 = prompt('Please enter a fifth score between 0.0 and 10.0.');
   }
+    score5 = parseInt(score5);
 let score6;
 score6 = prompt('Please enter a sixth score between 0.0 and 10.0.');
   while(score6 < 0 || score6 > 10){
     score6 = prompt('Please enter a sixth score between 0.0 and 10.0.');
   }
+    score6 = parseInt(score6);
 scores.push(score1);
 scores.push(score2);
 scores.push(score3);
@@ -302,10 +308,13 @@ scores.push(score5);
 scores.push(score6);
 
 let average
-average = score1 + score2 + score3 + score4 + score5 + score6 - Math.min(score1, score2, score3, score4, score5, score6) - Math.max(score1, score2, score3, score4, score5, score6);
-average = average / 4
+let min = Math.min(score1, score2, score3, score4, score5, score6);
+let max = Math.max(score1, score2, score3, score4, score5, score6);
+average = score1 + score2 + score3 + score4 + score5 + score6;
+average = (average - min - max) / 4;
+average = average.toFixed(2);
 var div=document.getElementById('gymnastics-output');
-div.innerHTML=(`Average Score: ${average}`);
+div.innerHTML=(`Discarded: ${min}, ${max}</br>Score: ${average}`);
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
    *       six of the judges' scores.
@@ -370,7 +379,47 @@ function reportCard() {
    *       representative of the number of tests, quizzes, and homework
    *       grades the user enters, respectively.
    */
+let addTest;
+tests = -1;
+for(testTotal = 1; addTest != -1; testTotal = testTotal + addTest){
+  addTest = prompt(`Input a number TEST grade from 0.0 to 100.0. When completed type "-1".`);
+    for(addTest = addTest; addTest < 0 && addTest != -1 || addTest > 100; addTest = addTest){
+      addTest = prompt(`PLEASE input a VALID number TEST grade from 0 to 100. When completed type "-1".`);
+    }
+  addTest = parseInt(addTest);
+  tests = tests + 1;
+}
+let testAverage = testTotal / tests;
+testAverage = testAverage.toFixed(2);
 
+let addQuiz;
+quizzes = -1;
+for(quizTotal = 1; addQuiz != -1; quizTotal = quizTotal + addQuiz){
+  addQuiz = prompt(`Input a number QUIZ grade from 0.0 to 100.0. When completed type "-1".`);
+    for(addQuiz = addQuiz; addQuiz < 0 && addQuiz != -1 || addQuiz > 100; addQuiz = addQuiz){
+      addQuiz = prompt(`PLEASE input a VALID number QUIZ grade from 0 to 100. When completed type "-1".`);
+    }
+  addQuiz = parseInt(addQuiz);
+  quizzes = quizzes + 1;
+}
+let quizAverage = quizTotal / quizzes;
+quizAverage = quizAverage.toFixed(2);
+
+let addHW;
+homeworks = -1;
+for(homeworkTotal = 1; addHW != -1; homeworkTotal = homeworkTotal + addHW){
+  addQuiz = prompt(`Input a number QUIZ grade from 0.0 to 100.0. When completed type "-1".`);
+    for(addQuiz = addQuiz; addQuiz < 0 && addQuiz != -1 || addQuiz > 100; addQuiz = addQuiz){
+      addQuiz = prompt(`PLEASE input a VALID number QUIZ grade from 0 to 100. When completed type "-1".`);
+    }
+  addQuiz = parseInt(addQuiz);
+  quizzes = quizzes + 1;
+}
+let quizAverage = quizTotal / quizzes;
+quizAverage = quizAverage.toFixed(2);
+
+var div=document.getElementById('report-card-output');
+div.innerHTML=(`Tests: ${testAverage}</br>Quizzes: ${quizAverage}`);
   /////////////////////// DO NOT MODIFY
   check('report-card', // DO NOT MODIFY
     testTotal, ////////// DO NOT MODIFY
