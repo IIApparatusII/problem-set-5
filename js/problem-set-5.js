@@ -29,26 +29,32 @@ function mario() {
   // WRITE YOUR EXERCISE 1 CODE HERE
 height=prompt("Please Enter an Integer Height Between 1 and 23.");
   while (height < 1 || height > 23 || height % 1 != 0) {
-    height=prompt("Please Enter an Integer Height Between 1 and 23.");
+    height=prompt("Please Enter a VALID Integer Height Between 1 and 23.");
   }
-}
-/*  let height1 = "##";
-    if (height === 2){
-      let height2 = "###";
-    }
-    if (height === 3){
-      let height3 = 0;
-    }
+height=parseInt(height);
+
+let add = '#'
+let space = "&nbsp"
+let base = add
+base = base + add;
+let lines = ''
+  for(let i=1; i != height; i++){
+    space = space + "&nbsp"
+    lines = base + add + "</br>";
+    base = space + base;
+  }
+
+
 
 
         var div=document.getElementById("mario-easy-output");
-        div.innerHTML=`##</break>${height}`;
+        div.innerHTML=(`${base}</br>${lines}`);
 
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
-}*/
+}
 /*
  * Mario, Again. 10 points.
  *
@@ -408,18 +414,21 @@ quizAverage = quizAverage.toFixed(2);
 let addHW;
 homeworks = -1;
 for(homeworkTotal = 1; addHW != -1; homeworkTotal = homeworkTotal + addHW){
-  addQuiz = prompt(`Input a number QUIZ grade from 0.0 to 100.0. When completed type "-1".`);
-    for(addQuiz = addQuiz; addQuiz < 0 && addQuiz != -1 || addQuiz > 100; addQuiz = addQuiz){
-      addQuiz = prompt(`PLEASE input a VALID number QUIZ grade from 0 to 100. When completed type "-1".`);
+  addHW = prompt(`Input a number HOMEWORK grade from 0.0 to 100.0. When completed type "-1".`);
+    for(addHW = addHW; addHW < 0 && addHW != -1 || addHW > 100; addHW = addHW){
+      addHW = prompt(`PLEASE input a VALID number HOMEWORK grade from 0 to 100. When completed type "-1".`);
     }
-  addQuiz = parseInt(addQuiz);
-  quizzes = quizzes + 1;
+  addHW = parseInt(addHW);
+  homeworks = homeworks + 1;
 }
-let quizAverage = quizTotal / quizzes;
-quizAverage = quizAverage.toFixed(2);
+let homeworkAverage = homeworkTotal / homeworks;
+homeworkAverage = homeworkAverage.toFixed(2);
+
+let grade = (testAverage * 0.6) + (quizAverage * 0.3) + (homeworkAverage * 0.1);
+grade = grade.toFixed(2);
 
 var div=document.getElementById('report-card-output');
-div.innerHTML=(`Tests: ${testAverage}</br>Quizzes: ${quizAverage}`);
+div.innerHTML=(`Tests: ${testAverage}</br>Quizzes: ${quizAverage}</br>Homework: ${homeworkAverage}</br>Grade: ${grade}`);
   /////////////////////// DO NOT MODIFY
   check('report-card', // DO NOT MODIFY
     testTotal, ////////// DO NOT MODIFY
