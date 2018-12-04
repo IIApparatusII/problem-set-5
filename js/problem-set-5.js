@@ -176,7 +176,12 @@ function credit() {
 function guess() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
+  let randomNumber = Math.floor(Math.random() * 1001) + 1;
+  var div=document.getElementById('guess-output');
 
+
+
+  div.innerHTML=(`${randomNumber}`);
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
