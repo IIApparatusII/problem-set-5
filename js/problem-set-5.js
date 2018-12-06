@@ -27,28 +27,39 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
-height=prompt("Please Enter an Integer Height Between 1 and 23.");
+height = prompt("Please Enter an Integer Height Between 1 and 23.");
   while (height < 1 || height > 23 || height % 1 != 0) {
-    height=prompt("Please Enter a VALID Integer Height Between 1 and 23.");
+    height = prompt("Please Enter a VALID Integer Height Between 1 and 23.");
   }
-height=parseInt(height);
+height = parseInt(height);
 
-let add = '#'
-let space = "&nbsp"
-let base = add
-base = base + add;
-let lines = ''
-  for(let i=1; i != height; i++){
+let i = 1;
+  let add = `#`;
+  let spaces = height - 2;
+  let lines = "<code>";
+  while (i <= height){
+    let blank = ``;
+    for(let b = 0; b <=spaces; b++){
+      blank += "&nbsp;";
+    }
+
+    spaces--;
+    add+=`#`;
+    lines = lines + blank + add +"</br>";
+    i++;
+  }
+  lines = lines + "</code>"
+  console.log(lines);
+  document.getElementById("mario-easy-output").innerHTML = lines;
+
+
+/*var div=document.getElementById("mario-easy-output");
+div.innerHTML=(`${lines}`);*/
+/*  for(let i=1; i != height; i++){
     space = space + "&nbsp"
     lines = base + add + "</br>";
     base = space + base;
-  }
-
-
-
-
-        var div=document.getElementById("mario-easy-output");
-        div.innerHTML=(`${base}</br>${lines}`);
+  } */
 
 
   ////////////////////////// DO NOT MODIFY
@@ -84,7 +95,31 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
+  height = prompt("Please Enter an Integer Height Between 1 and 23.");
+    while (height < 1 || height > 23 || height % 1 != 0) {
+      height = prompt("Please Enter a VALID Integer Height Between 1 and 23.");
+    }
+  height = parseInt(height);
 
+  let i = 1;
+    let add = `#`;
+    let spaces = height - 2;
+    let bigSpace = "&nbsp" + "&nbsp";
+    let lines = "<code>";
+    while (i <= height){
+      let blank = ``;
+      for(let b = 0; b <=spaces; b++){
+        blank += "&nbsp;";
+      }
+
+      spaces--;
+      add+=`#`;
+      lines = lines + blank + add + bigSpace + add + "</br>";
+      i++;
+    }
+    lines = lines + "</code>"
+    console.log(lines);
+    document.getElementById("mario-hard-output").innerHTML = lines;
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
   //////////////////////////////// DO NOT MODIFY
@@ -137,7 +172,10 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
-
+ card = prompt('Please enter your card number.');
+  while (cardlength == 16 || card.length == 15 || card.length == 13) && card % 1 != 0){
+    card = prompt('Please enter a VALID card number.');
+  }
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
@@ -177,11 +215,24 @@ function guess() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
   let randomNumber = Math.floor(Math.random() * 1001) + 1;
+  let numberGuesses = 0;
+  let guess
+  while (guess != randomNumber){
+    guess = prompt('Guess the random integer from 1 - 1000.');
+    while (guess < 1 || guess > 1000 || guess % 1 != 0) {
+      guess = prompt('Guess the random INTEGER from 1 - 1000.');
+    }
+    if (guess < randomNumber){
+      alert('Your guess was too low!');
+    }
+    if (guess > randomNumber){
+      alert('Your gues was too high!');
+    }
+    numberGuesses = numberGuesses + 1;
+  }
+
   var div=document.getElementById('guess-output');
-
-
-
-  div.innerHTML=(`${randomNumber}`);
+  div.innerHTML=(`You Guessed The Correct Number, ${randomNumber}!</br>It took you ${numberGuesses} attmepts.`);
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
