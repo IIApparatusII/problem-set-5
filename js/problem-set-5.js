@@ -27,7 +27,7 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
-height = prompt("Please Enter an Integer Height Between 1 and 23.");
+/*height = prompt("Please Enter an Integer Height Between 1 and 23.");
   while (height < 1 || height > 23 || height % 1 != 0) {
     height = prompt("Please Enter a VALID Integer Height Between 1 and 23.");
   }
@@ -95,7 +95,7 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
-  height = prompt("Please Enter an Integer Height Between 1 and 23.");
+  /*height = prompt("Please Enter an Integer Height Between 1 and 23.");
     while (height < 1 || height > 23 || height % 1 != 0) {
       height = prompt("Please Enter a VALID Integer Height Between 1 and 23.");
     }
