@@ -176,7 +176,7 @@ function credit() {
   while (cardlength == 16 || card.length == 15 || card.length == 13) && card % 1 != 0){
     card = prompt('Please enter a VALID card number.');
   }*/
-  card = prompt("Please enter your Credit Card number.");
+  /*card = prompt("Please enter your Credit Card number.");
   var p=document.getElementById("credit-output");
   let sum = 0;
   for (let a = 0; a < card.length; a = a + 1) {
@@ -202,7 +202,7 @@ function credit() {
   } else {
     p.innerHTML='<img src="images/invalid.png"/>';
   }
-  card = Number(card);
+  card = Number(card);*/
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
