@@ -27,7 +27,7 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
-/*height = prompt("Please Enter an Integer Height Between 1 and 23.");
+height = prompt("Please Enter an Integer Height Between 1 and 23.");
   while (height < 1 || height > 23 || height % 1 != 0) {
     height = prompt("Please Enter a VALID Integer Height Between 1 and 23.");
   }
@@ -95,7 +95,7 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
-  /*height = prompt("Please Enter an Integer Height Between 1 and 23.");
+  height = prompt("Please Enter an Integer Height Between 1 and 23.");
     while (height < 1 || height > 23 || height % 1 != 0) {
       height = prompt("Please Enter a VALID Integer Height Between 1 and 23.");
     }
@@ -176,7 +176,7 @@ function credit() {
   while (cardlength == 16 || card.length == 15 || card.length == 13) && card % 1 != 0){
     card = prompt('Please enter a VALID card number.');
   }*/
-  /*card = prompt("Please enter your Credit Card number.");
+  card = prompt("Please enter your Credit Card number.");
   var p=document.getElementById("credit-output");
   let sum = 0;
   for (let a = 0; a < card.length; a = a + 1) {
