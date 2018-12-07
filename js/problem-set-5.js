@@ -172,10 +172,37 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
- card = prompt('Please enter your card number.');
+ /*card = prompt('Please enter your card number.');
   while (cardlength == 16 || card.length == 15 || card.length == 13) && card % 1 != 0){
     card = prompt('Please enter a VALID card number.');
+  }*/
+  card = prompt("Please enter your Credit Card number.");
+  var p=document.getElementById("credit-output");
+  let sum = 0;
+  for (let a = 0; a < card.length; a = a + 1) {
+    if (a%2 == card.length%2) {
+      if (card[a] >= 5) {
+        sum += Number(card[a]) * 2 - 9;
+      } else {
+        sum += Number(card[a]) * 2;
+      }
+    } else {
+      sum += Number(card[a]);
+    }
   }
+  sum% = 10;
+  if (sum != 0) {
+    p.innerHTML='<img src="images/invalid.png"/>';
+  } else if(card.length == 15 && card[0] == 3 && (card[1] == 4 || card[1] == 7)) {
+    p.innerHTML='<img src="images/amex.png"/>';
+  } else if(card.length == 16 && card[0] == 5 && 0 < card[1] < 6) {
+    p.innerHTML='<img src="images/mastercard.png"/>';
+  } else if((card.length == 13 || card.length == 16) && card[0] == 4) {
+    p.innerHTML='<img src="images/visa.png"/>';
+  } else {
+    p.innerHTML='<img src="images/invalid.png"/>';
+  }
+  card = Number(card);
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
